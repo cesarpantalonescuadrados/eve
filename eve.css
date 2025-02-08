@@ -24,3 +24,7 @@ body {
     height: 1000px;
     background-color: aqua;
 }
+.uno p {
+    font-size: 100px;
+        color: white;
+}
