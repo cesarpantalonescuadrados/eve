@@ -62,8 +62,18 @@ body {
     padding: 10px;
     color: #333;
     z-index: 1;
-    transition: bottom 0.5s ease;
+       animation: moveUp 1s ease-out forwards; /* Aplica la animación */
+
 }
+@keyframes moveUp {
+    0% {
+        bottom: -150px; /* Comienza debajo del sobre */
+    }
+    100% {
+        bottom: 0; /* Termina en su posición final */
+    }
+}
+
 
 /* Efecto al pasar el cursor sobre el sobre */
 .envelope-container:hover .letter {
