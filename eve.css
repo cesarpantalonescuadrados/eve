@@ -16,7 +16,7 @@ body {
 @media (max-width: 480px) {
     body {
         font-size: 12px;
-        padding: 500px;
+        padding: 5px;
     }
 }
 .uno{
