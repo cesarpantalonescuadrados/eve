@@ -1,30 +1,80 @@
-/* Diseño por defecto para pantallas grandes */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    font-size: 16px;
-    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffc0c0;
+    font-family: 'Arial', sans-serif;
 }
 
-/* Para pantallas de hasta 768px (tabletas y teléfonos) */
-@media (max-width: 768px) {
-    body {
-        font-size: 14px;
-        padding: 10px;
-    }
+.envelope-container {
+    position: relative;
+    width: 200px;
+    height: 120px;
 }
 
-/* Para pantallas más pequeñas de hasta 480px (teléfonos móviles) */
-@media (max-width: 480px) {
-    body {
-        font-size: 12px;
-        padding: 5px;
-    }
+.envelope {
+    position: relative;
+    width: 200px;
+    height: 120px;
+    background-color: #c0392b;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    z-index: 2; /* El sobre está delante de la carta */
 }
-.uno{
+
+.envelope::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 1000px;
-    background-color: black;
+    height: 100%;
+    background-color: #e74c3c;
+    clip-path: polygon(0 0, 50% 50%, 100% 0);
+    z-index: 3; /* La tapa del sobre está encima del sobre */
 }
-.uno p {
-    font-size: 10px;
-        color: white;
+
+.letter {
+    position: absolute;
+    bottom: -50px; /* Inicialmente oculta */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180px;
+    height: 100px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    padding: 10px;
+    color: #333;
+    margin-bottom: 30%;
+    z-index: 1; /* La carta está detrás del sobre */
+    transition: bottom 0.5s ease;
 }
+
+/* Efecto al pasar el cursor sobre el sobre */
+.envelope-container:hover .letter {
+    bottom: 0; /* La carta se asoma por detrás cuando pasas el cursor */
+}
+
+.btnn {
+    width: 100%;
+    height: 100%;
+    border: 0px;
+    background-color: transparent;
+    text-align: center;
+    position: absolute; /* Posiciona el enlace de forma absoluta */
+    top: 5px; /* Ajusta la posición, puedes cambiar estos valores */
+    right: 1px;
+    z-index: 10; /* Asegura que el botón esté por delante de los demás elementos */
+  }
