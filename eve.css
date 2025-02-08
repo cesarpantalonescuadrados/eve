@@ -47,9 +47,10 @@ body {
 .letter {
     position: absolute;
     bottom: -150px; /* Inicialmente oculta */
+    margin-bottom: 95%;
     left: 50%;
     transform: translateX(-50%);
-    width: 90%;  /* Ajusta el tamaño de la carta al 90% del ancho del sobre */
+    width: 95%;  /* Ajusta el tamaño de la carta al 90% del ancho del sobre */
     height: 140px; /* Altura ajustada */
     background-color: #ffffff;
     border-radius: 5px;
@@ -70,8 +71,8 @@ body {
 }
 
 .btnn {
-    width: 40px;  /* Tamaño pequeño para que no ocupe demasiado espacio */
-    height: 40px;
+    width: 100%;  /* Tamaño pequeño para que no ocupe demasiado espacio */
+    height: 100%;
     border: 0;
     background-color: transparent;
     text-align: center;
@@ -79,9 +80,6 @@ body {
     top: 5px;
     left: 5px;
     z-index: 10; /* Asegura que el botón esté por delante de los demás elementos */
-    border-radius: 50%;  /* Forma redonda */
-    background-color: #fff;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 /* Media query para pantallas móviles */
